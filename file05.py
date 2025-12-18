@@ -6,5 +6,12 @@ def main(data:str):
     Returns:
         list: return answer
     """
-    
-# Read data from file
+    f=open(data)
+    data=f.read()
+    count=0
+    for i in data:
+        if not i.isdigit():
+            count+=1
+    f.close()
+    return [len(data),count]
+print(main("./data/data05.txt"))
